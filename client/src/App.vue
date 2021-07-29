@@ -5,8 +5,8 @@
       Vue.js İle Codeigniter Servisine Bağlantı
     </h1>
 
-    <!--appList => app-list -->
-    <app-list></app-list>
+    <!--CourseList => course-list -->
+    <course-list></course-list>
 
     <NewCourse />
 
@@ -14,13 +14,13 @@
 </template>
 
 <script>
-  import List from "./pages/List"
-  //import NewCourse from "./pages/NewCourse"
+  import Courses from "./components/ListCourse/Courses"
+  //import NewCourse from "./components/NewCourse"
 
   export default {
     components: {
-      //List or
-      appList: List,
+      //CourseList or
+      CourseList: Courses,
 
       //NewCourse
     }
