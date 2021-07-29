@@ -13,9 +13,15 @@
                     <Course v-for="index in 10" :key="index" />
                 </tbody>
             </table>
-            <button class="btn btn-dark text-info float-right">
+
+            <router-link
+            to="/new"
+            tag="button"
+            class="btn btn-dark text-info float-right"
+            >
                 Yeni Ekle
-            </button>
+            </router-link>
+
         </div>
     </div>
 </template>

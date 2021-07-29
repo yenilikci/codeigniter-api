@@ -8,9 +8,14 @@
             <button class="btn btn-sm btn-outline-danger mx-1">
                 Sil
             </button>
-            <button class="btn btn-sm btn-outline-warning mx-1">
+            <router-link
+            to="/update"
+            tag="button"
+            class="btn btn-sm btn-outline-warning mx-1"
+            >
                 Düzenle
-            </button>
+            </router-link>
+
         </td>
     </tr>
 </template>

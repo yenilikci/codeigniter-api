@@ -5,22 +5,23 @@
       Vue.js İle Codeigniter Servisine Bağlantı
     </h1>
 
-    <!--CourseList => course-list -->
-    <course-list></course-list>
-
-    <NewCourse />
-
+    <!--Note: CourseList => course-list -->
+    <!-- <course-list></course-list> -->
+    <!-- <NewCourse /> -->
+    
+    <router-view></router-view>
+    
   </div>
 </template>
 
 <script>
-  import Courses from "./components/ListCourse/Courses"
+  //import Courses from "./components/ListCourse/Courses"
   //import NewCourse from "./components/NewCourse"
 
   export default {
     components: {
       //CourseList or
-      CourseList: Courses,
+      //CourseList: Courses,
 
       //NewCourse
     }
