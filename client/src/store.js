@@ -38,17 +38,26 @@ const store = new Vuex.Store({
         },
         addCourseAction(context, course) {
             //db işlemleri yer alacak...
+            return axios.post("http://127.0.0.1/codeigniter-api/api/save", JSON.stringify(course))
+                .then(response => {
+                    //course.id = response.data.insert_id
+                    context.commit("addCourse", { id: response.data.insert_id, ...course })
+                })
 
-            context.commit("addCourse", course)
         },
         updateCourseAction(context, course) {
             //db işlemleri yer alacak...
-
-            context.commit("updateCourse", course)
+            return axios.post("http://127.0.0.1/codeigniter-api/api/update", JSON.stringify(course))
+                .then(() => {
+                    context.commit("updateCourse", course)
+                })
         },
         deleteCourseAction(context, courseId) {
             //db işlemleri yer alacak...
-            context.commit("deleteCourse", courseId)
+            return axios.post("http://127.0.0.1/codeigniter-api/api/delete", JSON.stringify({ id: courseId }))
+                .then(() => {
+                    context.commit("deleteCourse", courseId)
+                })
         }
     },
     getters: {

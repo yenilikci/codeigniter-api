@@ -19,7 +19,12 @@ class Course_Model extends CI_Model
     public function save($data = array())
     {
         //SAVE record
-        return json_encode($this->db->insert($this->tableName, $data));
+        $insert = $this->db->insert($this->tableName, $data);
+        if ($insert) {
+            return json_encode(array(
+                "insert_id" => $this->db->insert_id() //last insert id
+            ));
+        }
     }
 
     public function update($data = array(), $where = array())

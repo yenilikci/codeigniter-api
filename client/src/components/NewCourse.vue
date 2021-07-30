@@ -43,6 +43,9 @@
         methods: {
             onSubmit() {
                 this.$store.dispatch("addCourseAction", this.course)
+                    .then(() => {
+                        this.$router.push("/")
+                    })
             }
         }
     }

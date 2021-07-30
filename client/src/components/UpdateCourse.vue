@@ -43,12 +43,15 @@
         methods: {
             onSubmit() {
                 this.$store.dispatch("updateCourseAction", this.course)
+                    .then(() => {
+                        this.$router.push("/")
+                    })
             }
         },
         created() {
             //reference
             //this.course = this.$route.params.passedCourse
-            
+
             //non reference
             this.course = {
                 ...this.$route.params.passedCourse
