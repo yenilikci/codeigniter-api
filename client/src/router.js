@@ -2,7 +2,7 @@ import Vue from "vue"
 import VueRouter from "vue-router"
 import Courses from "./components/ListCourse/Courses"
 import NewCourse from "./components/NewCourse"
-import UpdateCourse from "./components/NewCourse"
+import UpdateCourse from "./components/UpdateCourse"
 
 Vue.use(VueRouter)
 
@@ -17,6 +17,7 @@ export const router = new VueRouter({
             component: NewCourse
         },
         {
+            name: "update-param",
             path: "/update",
             component: UpdateCourse
         },
