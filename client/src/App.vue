@@ -8,9 +8,11 @@
     <!--Note: CourseList => course-list -->
     <!-- <course-list></course-list> -->
     <!-- <NewCourse /> -->
-    
-    <router-view></router-view>
-    
+
+    <transition name="page" mode="out-in">
+      <router-view></router-view>
+    </transition>
+
   </div>
 </template>
 
@@ -27,7 +29,7 @@
     },
 
     //created lifecycle hook
-    created(){
+    created() {
       this.$store.dispatch("initApp")
     }
   }
@@ -40,5 +42,16 @@
 
   body {
     background-image: linear-gradient(to right top, #051937, #002b2d, #203028, #32342d);
+  }
+
+  .page-enter,
+  .page-leave-active {
+    opacity: 0;
+    transform: translate(50px) scale(0);
+  }
+
+  .page-enter-active,
+  .page-leave-active {
+    transition: all .5s;
   }
 </style>
