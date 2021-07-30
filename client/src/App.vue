@@ -24,6 +24,11 @@
       //CourseList: Courses,
 
       //NewCourse
+    },
+
+    //created lifecycle hook
+    created(){
+      this.$store.dispatch("initApp")
     }
   }
 </script>

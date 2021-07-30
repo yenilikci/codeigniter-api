@@ -10,15 +10,12 @@
                     <th>İşlem</th>
                 </thead>
                 <tbody>
-                    <Course v-for="index in 10" :key="index" />
+                    <!-- courses ==> computed data, store getters access -->
+                    <Course v-for="course in courses" :key="course" :course="course"/>
                 </tbody>
             </table>
 
-            <router-link
-            to="/new"
-            tag="button"
-            class="btn btn-dark text-info float-right"
-            >
+            <router-link to="/new" tag="button" class="btn btn-dark text-info float-right">
                 Yeni Ekle
             </router-link>
 
@@ -31,6 +28,12 @@
     export default {
         components: {
             Course
+        },
+        // store getters access
+        computed: {
+            courses() {
+                return this.$store.getters.getCourses
+            }
         }
     }
 </script>
